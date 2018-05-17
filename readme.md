@@ -3,6 +3,7 @@ typora-root-url: image
 ---
 
 **25 个精彩的 HTML5 CSS3 jQuery 下拉菜单**
+typora-root-url: ./
 
 示例图片展示
 
