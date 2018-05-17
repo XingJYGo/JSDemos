@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<!-- saved from url=(0043)http://s.codepen.io/mingger/fullpage/hdtiD? -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <meta charset="UTF-8">
+
+  <!--
+Copyright (c) 2014 by Nicolaj Egelund (http://codepen.io/mingger/pen/hdtiD)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+-->
+
+  <title>3D dropdown with scss - CodePen</title>
+
+  <style>* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #3498db;
+  text-decoration: none;
+}
+
+.menu {
+  -moz-perspective: 1000;
+  -webkit-perspective: 1000;
+  perspective: 1000;
+  width: 150px;
+  margin: 20px auto;
+}
+
+h1, h3 {
+  font-family: georgia;
+  font-weight: 200;
+  text-align: center;
+  margin-top: 100px;
+  font-size: 50px;
+}
+
+h3 {
+  margin: 5px;
+  font-size: 20px;
+}
+
+ul {
+  list-style: none;
+}
+
+.menu ul li, .menu span {
+  display: block;
+  width: 150px;
+  height: 40px;
+  padding: 10px 5px;
+  background-color: #1abc9c;
+  color: #fff;
+  border-bottom: 1px solid #00A686;
+  font-family: tahoma;
+  cursor: pointer;
+}
+
+.menu span {
+  background-color: #16a085;
+  border: none;
+  text-align: center;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  -moz-transition: border-radius, 0.5s;
+  -o-transition: border-radius, 0.5s;
+  -webkit-transition: border-radius, 0.5s;
+  transition: border-radius, 0.5s;
+}
+
+.menu:hover span {
+  -moz-border-radius: 2px 2px 0 0;
+  -webkit-border-radius: 2px;
+  border-radius: 2px 2px 0 0;
+}
+
+.menu ul li {
+  -moz-transform-origin: top center 0px;
+  -webkit-transform-origin: top center 0px;
+  transform-origin: top center 0px;
+  -moz-transform: rotateX(-90deg);
+  -ms-transform: rotateX(-90deg);
+  -o-transform: rotateX(-90deg);
+  -webkit-transform: rotateX(-90deg);
+  transform: rotateX(-90deg);
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+}
+
+.menu ul li:last-of-type {
+  border: none;
+  -moz-border-radius: 0 0 2px 2px;
+  -webkit-border-radius: 0;
+  border-radius: 0 0 2px 2px;
+}
+
+.menu:hover ul li {
+  -moz-transform: rotateX(0deg);
+  -ms-transform: rotateX(0deg);
+  -o-transform: rotateX(0deg);
+  -webkit-transform: rotateX(0deg);
+  transform: rotateX(0deg);
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
+}
+
+.menu ul li:hover {
+  background-color: #34495e;
+}
+
+.menu:hover ul li:nth-of-type(1) {
+  -moz-transition: -moz-transform 0.3s 0.3s, opacity 0s 0.3s;
+  -o-transition: -o-transform 0.3s 0.3s, opacity 0s 0.3s;
+  -webkit-transition: -webkit-transform 0.3s 0.3s, opacity 0s 0.3s;
+  transition: transform 0.3s 0.3s, opacity 0s 0.3s;
+}
+
+.menu ul li:nth-of-type(1) {
+  -moz-transition: -moz-transform 0.3s 0.9s, opacity 0s 1.2s;
+  -o-transition: -o-transform 0.3s 0.9s, opacity 0s 1.2s;
+  -webkit-transition: -webkit-transform 0.3s 0.9s, opacity 0s 1.2s;
+  transition: transform 0.3s 0.9s, opacity 0s 1.2s;
+}
+
+.menu:hover ul li:nth-of-type(2) {
+  -moz-transition: -moz-transform 0.3s 0.6s, opacity 0s 0.6s;
+  -o-transition: -o-transform 0.3s 0.6s, opacity 0s 0.6s;
+  -webkit-transition: -webkit-transform 0.3s 0.6s, opacity 0s 0.6s;
+  transition: transform 0.3s 0.6s, opacity 0s 0.6s;
+}
+
+.menu ul li:nth-of-type(2) {
+  -moz-transition: -moz-transform 0.3s 0.6s, opacity 0s 0.9s;
+  -o-transition: -o-transform 0.3s 0.6s, opacity 0s 0.9s;
+  -webkit-transition: -webkit-transform 0.3s 0.6s, opacity 0s 0.9s;
+  transition: transform 0.3s 0.6s, opacity 0s 0.9s;
+}
+
+.menu:hover ul li:nth-of-type(3) {
+  -moz-transition: -moz-transform 0.3s 0.9s, opacity 0s 0.9s;
+  -o-transition: -o-transform 0.3s 0.9s, opacity 0s 0.9s;
+  -webkit-transition: -webkit-transform 0.3s 0.9s, opacity 0s 0.9s;
+  transition: transform 0.3s 0.9s, opacity 0s 0.9s;
+}
+
+.menu ul li:nth-of-type(3) {
+  -moz-transition: -moz-transform 0.3s 0.3s, opacity 0s 0.6s;
+  -o-transition: -o-transform 0.3s 0.3s, opacity 0s 0.6s;
+  -webkit-transition: -webkit-transform 0.3s 0.3s, opacity 0s 0.6s;
+  transition: transform 0.3s 0.3s, opacity 0s 0.6s;
+}
+
+.menu:hover ul li:nth-of-type(4) {
+  -moz-transition: -moz-transform 0.3s 1.2s, opacity 0s 1.2s;
+  -o-transition: -o-transform 0.3s 1.2s, opacity 0s 1.2s;
+  -webkit-transition: -webkit-transform 0.3s 1.2s, opacity 0s 1.2s;
+  transition: transform 0.3s 1.2s, opacity 0s 1.2s;
+}
+
+.menu ul li:nth-of-type(4) {
+  -moz-transition: -moz-transform 0.3s 0.0s, opacity 0s 0.3s;
+  -o-transition: -o-transform 0.3s 0.0s, opacity 0s 0.3s;
+  -webkit-transition: -webkit-transform 0.3s 0.0s, opacity 0s 0.3s;
+  transition: transform 0.3s 0.0s, opacity 0s 0.3s;
+}</style>
+
+  <script>
+    window.open    = function(){};
+    window.print   = function(){};
+    // Support hover state for mobile.
+    if (false) {
+      window.ontouchstart = function(){};
+    }
+
+    function __linkClick(e) {
+      parent.window.postMessage(this.href, '*');
+    };
+
+    function __bindToLinks() {
+      var __links = document.querySelectorAll('a');
+      for (var i = 0, l = __links.length; i < l; i++) {
+        if ( __links[i].getAttribute('data-t') == '_blank' ) {
+          __links[i].addEventListener('click', __linkClick, false);
+        }
+      }
+    }
+  </script>
+
+<style type="text/css"></style></head>
+
+<body>
+
+  <h1>3D dropdown menu</h1>
+<h3><a href="http://bit.ly/14XAO0z" data-t="_blank">Inspiration</a></h3>
+<div class="menu">
+  <span>Hover me for drop</span>
+  <ul>
+    <li>First drop</li>
+    <li>Second drop</li>
+    <li>Third drop</li>
+    <li>Fourth drop</li>
+  </ul>
+</div>
+
+  <script>
+    if (document.location.search.match(/type=embed/gi)) {
+      window.parent.postMessage('resize', "*");
+    }
+    __bindToLinks();
+  </script>
+
+
+
+
+</body></html>

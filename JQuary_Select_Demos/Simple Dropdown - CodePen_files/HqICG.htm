@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<!-- saved from url=(0046)http://s.codepen.io/Dianatomic/fullpage/HqICG? -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <meta charset="UTF-8">
+
+  <!--
+Copyright (c) 2014 by Diana Arz (http://codepen.io/Dianatomic/pen/HqICG)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+-->
+
+  <title>Simple Dropdown - CodePen</title>
+
+  <style>body {
+	background: #f2f2f2;
+	font-size: 1.25em;
+	font-family: 'Raleway', sans-serif;
+}
+
+nav {
+	margin: 100px auto; 
+	text-align: center;
+}
+
+nav ul {
+	margin-left: 0;
+	padding-left: 0;
+	width: 500px;
+	list-style: none;
+	position: relative;
+	display: inline-table;
+}
+
+nav ul ul {
+	display: none;
+}
+
+nav ul li:hover > ul {
+	display: block;
+}
+
+nav ul li {
+	float: left;
+	width: 500px;
+	text-align: left;
+	border-bottom: 3px solid #2ecc71; 
+}
+
+nav ul li:hover {
+	background: #f2f2f2;
+}
+
+nav ul li a {
+	display: block; 
+	padding: 15px 10px;
+	color: #2a2a2a; 
+	text-decoration: none;
+}
+
+nav ul ul {
+	border-radius: 0px; 
+	padding: 0;
+	position: absolute; 
+	top: 100%;
+}
+
+nav ul ul li {
+	float: none;
+	border-bottom: 2px solid #eaeaea; 
+	position: relative;
+}
+
+nav ul ul li a {
+	padding: 15px 10px;
+	color: #838383;
+}	
+
+nav ul ul li a:hover {
+	background: #47d583;
+	color: #fff;
+}	
+
+#down-triangle {
+	float: right;
+	width: 0; 
+ 	height: 0;
+ 	margin-top: 10px;
+ 	border-top: 10px solid #2ecc71;
+  border-left: 10px solid transparent; 
+  border-right: 10px solid transparent; 
+}
+
+.circle {
+	float: right;
+	display: inline;
+	width: 10px;
+ 	height: 10px; 
+ 	margin-top: 5px;
+  border: 3px solid #8ce5b2;
+  -moz-border-radius: 100%; 
+  -webkit-border-radius: 100%; 
+  border-radius: 100%;
+}</style>
+
+  <script>
+    window.open    = function(){};
+    window.print   = function(){};
+    // Support hover state for mobile.
+    if (false) {
+      window.ontouchstart = function(){};
+    }
+
+    function __linkClick(e) {
+      parent.window.postMessage(this.href, '*');
+    };
+
+    function __bindToLinks() {
+      var __links = document.querySelectorAll('a');
+      for (var i = 0, l = __links.length; i < l; i++) {
+        if ( __links[i].getAttribute('data-t') == '_blank' ) {
+          __links[i].addEventListener('click', __linkClick, false);
+        }
+      }
+    }
+  </script>
+
+<style type="text/css"></style></head>
+
+<body>
+
+<nav>
+	<ul>
+		<li><a href="http://s.codepen.io/Dianatomic/fullpage/HqICG?#">Simple philosophies<div id="down-triangle"></div></a>
+			<ul>
+				<li><a href="http://s.codepen.io/Dianatomic/fullpage/HqICG?#">Make it simple but significant.<div class="circle"></div></a></li>
+				<li><a href="http://s.codepen.io/Dianatomic/fullpage/HqICG?#">Stay focused and keep shipping.<div class="circle"></div></a></li>
+				<li><a href="http://s.codepen.io/Dianatomic/fullpage/HqICG?#">Done is better than perfect.<div class="circle"></div></a></li>
+				<li><a href="http://s.codepen.io/Dianatomic/fullpage/HqICG?#">Design is how it works.<div class="circle"></div></a></li>
+				<li><a href="http://s.codepen.io/Dianatomic/fullpage/HqICG?#">Think big, start small, learn fast.<div class="circle"></div></a></li>
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+  <script>
+    if (document.location.search.match(/type=embed/gi)) {
+      window.parent.postMessage('resize', "*");
+    }
+    __bindToLinks();
+  </script>
+
+
+
+
+</body></html>
