@@ -3,7 +3,7 @@ typora-root-url: image
 ---
 
 **25 个精彩的 HTML5 CSS3 jQuery 下拉菜单**
-示例图片展示
+示例图片展示...
 
 ![gif3](E:\Program Files (x86)\LICEcap\gif3.gif)
 
